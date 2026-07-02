@@ -137,10 +137,10 @@
         {
           "id": "tc02-05",
           "comment": "Verificar que el campo título tiene clase is-invalid (borde rojo)",
-          "command": "assertCssClass",
-          "target": "id=titulo",
+          "command": "assertElementPresent",
+          "target": "css=#titulo.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": ""
         },
         {
           "id": "tc02-06",
@@ -195,10 +195,11 @@
         },
         {
           "id": "tc03-05",
-          "command": "assertCssClass",
-          "target": "id=artista",
+          "command": "assertElementPresent",
+          "target": "css=#artista.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo artista tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc03-06",
@@ -251,10 +252,11 @@
         },
         {
           "id": "tc04-05",
-          "command": "assertCssClass",
-          "target": "id=duracion",
+          "command": "assertElementPresent",
+          "target": "css=#duracion.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo duracion tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc04-06",
@@ -274,7 +276,7 @@
     },
     {
       "id": "tc-05",
-      "name": "TC-05: Error - Título demasiado largo (> 100 caracteres)",
+      "name": "TC-05: Error - Título demasiado largo (> 200 caracteres)",
       "commands": [
         {
           "id": "tc05-01",
@@ -285,11 +287,11 @@
         },
         {
           "id": "tc05-02",
-          "comment": "Escribir 101 caracteres en el título (supera el máximo de 100)",
+          "comment": "Escribir 201 caracteres en el título (supera el máximo de 200)",
           "command": "type",
           "target": "id=titulo",
           "targets": [],
-          "value": "AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDDEEEEEEEEEEFFFFFFFFFFGGGGGGGGGGHHHHHHHHHHIIIIIIIIIIJJJJJJJJJJa"
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
           "id": "tc05-03",
@@ -314,17 +316,18 @@
         },
         {
           "id": "tc05-06",
-          "command": "assertCssClass",
-          "target": "id=titulo",
+          "command": "assertElementPresent",
+          "target": "css=#titulo.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo titulo tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc05-07",
           "command": "assertText",
           "target": "id=tituloError",
           "targets": [],
-          "value": "El título no puede superar 100 caracteres."
+          "value": "El título no puede superar 200 caracteres."
         },
         {
           "id": "tc05-08",
@@ -337,7 +340,7 @@
     },
     {
       "id": "tc-06",
-      "name": "TC-06: Error - Artista demasiado largo (> 100 caracteres)",
+      "name": "TC-06: Error - Artista demasiado largo (> 120 caracteres)",
       "commands": [
         {
           "id": "tc06-01",
@@ -355,11 +358,11 @@
         },
         {
           "id": "tc06-03",
-          "comment": "Escribir 101 caracteres en el artista (supera el máximo de 100)",
+          "comment": "Escribir 121 caracteres en el artista (supera el máximo de 120)",
           "command": "type",
           "target": "id=artista",
           "targets": [],
-          "value": "KKKKKKKKKKLLLLLLLLLLMMMMMMMMMMNNNNNNNNNNOOOOOOOOOOPPPPPPPPPPQQQQQQQQQQRRRRRRRRRRSSSSSSSSSSTTTTTTTTTTu"
+          "value": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
         },
         {
           "id": "tc06-04",
@@ -377,17 +380,18 @@
         },
         {
           "id": "tc06-06",
-          "command": "assertCssClass",
-          "target": "id=artista",
+          "command": "assertElementPresent",
+          "target": "css=#artista.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo artista tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc06-07",
           "command": "assertText",
           "target": "id=artistaError",
           "targets": [],
-          "value": "El artista no puede superar 100 caracteres."
+          "value": "El artista no puede superar 120 caracteres."
         },
         {
           "id": "tc06-08",
@@ -400,7 +404,7 @@
     },
     {
       "id": "tc-07",
-      "name": "TC-07: Error - Duración superior al máximo (> 600)",
+      "name": "TC-07: Error - Duración superior al máximo (> 3600)",
       "commands": [
         {
           "id": "tc07-01",
@@ -425,11 +429,11 @@
         },
         {
           "id": "tc07-04",
-          "comment": "Introducir duración por encima del máximo permitido (601 > 600)",
+          "comment": "Introducir duración por encima del máximo permitido (3601 > 3600)",
           "command": "type",
           "target": "id=duracion",
           "targets": [],
-          "value": "601"
+          "value": "3601"
         },
         {
           "id": "tc07-05",
@@ -440,17 +444,18 @@
         },
         {
           "id": "tc07-06",
-          "command": "assertCssClass",
-          "target": "id=duracion",
+          "command": "assertElementPresent",
+          "target": "css=#duracion.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo duracion tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc07-07",
           "command": "assertText",
           "target": "id=duracionError",
           "targets": [],
-          "value": "La duración no puede superar 600 segundos."
+          "value": "La duración no puede superar 3600 segundos."
         },
         {
           "id": "tc07-08",
@@ -503,10 +508,11 @@
         },
         {
           "id": "tc08-06",
-          "command": "assertCssClass",
-          "target": "id=duracion",
+          "command": "assertElementPresent",
+          "target": "css=#duracion.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo duracion tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc08-07",
@@ -703,7 +709,7 @@
     },
     {
       "id": "tc-11",
-      "name": "TC-11: Valor límite - Duración exactamente 600 (válido)",
+      "name": "TC-11: Valor límite - Duración exactamente 3600 (válido)",
       "commands": [
         {
           "id": "tc11-01",
@@ -728,11 +734,11 @@
         },
         {
           "id": "tc11-04",
-          "comment": "600 es el valor máximo permitido, debe ser aceptado",
+          "comment": "3600 es el valor máximo permitido, debe ser aceptado",
           "command": "type",
           "target": "id=duracion",
           "targets": [],
-          "value": "600"
+          "value": "3600"
         },
         {
           "id": "tc11-05",
@@ -754,7 +760,7 @@
           "command": "assertText",
           "target": "css=#cancionesBody tr:first-child td:nth-child(4)",
           "targets": [],
-          "value": "600"
+          "value": "3600"
         }
       ]
     },
@@ -779,24 +785,27 @@
         },
         {
           "id": "tc12-03",
-          "command": "assertCssClass",
-          "target": "id=titulo",
+          "command": "assertElementPresent",
+          "target": "css=#titulo.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo titulo tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc12-04",
-          "command": "assertCssClass",
-          "target": "id=artista",
+          "command": "assertElementPresent",
+          "target": "css=#artista.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo artista tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc12-05",
-          "command": "assertCssClass",
-          "target": "id=duracion",
+          "command": "assertElementPresent",
+          "target": "css=#duracion.is-invalid",
           "targets": [],
-          "value": "is-invalid"
+          "value": "",
+          "comment": "Verificar que el campo duracion tiene la clase 'is-invalid' (borde rojo de error)"
         },
         {
           "id": "tc12-06",
@@ -827,6 +836,192 @@
           "value": "0"
         }
       ]
+    },
+    {
+      "id": "tc-13",
+      "name": "TC-13: Valor límite - Título exactamente 200 caracteres (válido)",
+      "commands": [
+        {
+          "id": "tc13-01",
+          "comment": "",
+          "command": "open",
+          "target": "/ejercicio3/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc13-02",
+          "comment": "200 caracteres es el máximo permitido, debe ser aceptado",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        {
+          "id": "tc13-03",
+          "comment": "",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Límite Título"
+        },
+        {
+          "id": "tc13-04",
+          "comment": "",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "200"
+        },
+        {
+          "id": "tc13-05",
+          "comment": "",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc13-06",
+          "comment": "Verificar que se añadió correctamente (no hay error de validación)",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc13-07",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(2)",
+          "targets": [],
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
+    },
+    {
+      "id": "tc-14",
+      "name": "TC-14: Valor límite - Artista exactamente 120 caracteres (válido)",
+      "commands": [
+        {
+          "id": "tc14-01",
+          "comment": "",
+          "command": "open",
+          "target": "/ejercicio3/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc14-02",
+          "comment": "",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Límite Artista"
+        },
+        {
+          "id": "tc14-03",
+          "comment": "120 caracteres es el máximo permitido, debe ser aceptado",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        },
+        {
+          "id": "tc14-04",
+          "comment": "",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "180"
+        },
+        {
+          "id": "tc14-05",
+          "comment": "",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc14-06",
+          "comment": "Verificar que se añadió correctamente (no hay error de validación)",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc14-07",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(3)",
+          "targets": [],
+          "value": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        }
+      ]
+    },
+    {
+      "id": "tc-15",
+      "name": "TC-15: Valor límite - Duración exactamente 1 (válido)",
+      "commands": [
+        {
+          "id": "tc15-01",
+          "comment": "",
+          "command": "open",
+          "target": "/ejercicio3/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc15-02",
+          "comment": "",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Mínima"
+        },
+        {
+          "id": "tc15-03",
+          "comment": "",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Mínimo"
+        },
+        {
+          "id": "tc15-04",
+          "comment": "1 es el valor mínimo permitido, debe ser aceptado",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc15-05",
+          "comment": "",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc15-06",
+          "comment": "Verificar que se añadió correctamente (no hay error de validación)",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc15-07",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(4)",
+          "targets": [],
+          "value": "1"
+        }
+      ]
     }
   ],
   "suites": [
@@ -848,7 +1043,10 @@
         "tc-09",
         "tc-10",
         "tc-11",
-        "tc-12"
+        "tc-12",
+        "tc-13",
+        "tc-14",
+        "tc-15"
       ]
     }
   ],

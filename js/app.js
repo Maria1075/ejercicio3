@@ -1,10 +1,10 @@
 'use strict';
 
 // ── Restricciones idénticas a la clase Cancion del Ejercicio 2 ──
-const TITULO_MAX_LENGTH  = 100;
-const ARTISTA_MAX_LENGTH = 100;
+const TITULO_MAX_LENGTH  = 200;
+const ARTISTA_MAX_LENGTH = 120;
 const DURACION_MIN       = 1;
-const DURACION_MAX       = 600;
+const DURACION_MAX       = 3600;
 
 // Array en memoria: equivale a la "sesión del usuario" en el navegador
 const canciones = [];
