@@ -12,7 +12,7 @@
           "id": "tc01-01",
           "comment": "Abrir la página principal",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -106,7 +106,7 @@
           "id": "tc02-01",
           "comment": "Abrir la página (reinicia la sesión en memoria)",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -167,7 +167,7 @@
         {
           "id": "tc03-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -223,7 +223,7 @@
         {
           "id": "tc04-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -279,7 +279,7 @@
         {
           "id": "tc05-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -342,7 +342,7 @@
         {
           "id": "tc06-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -405,7 +405,7 @@
         {
           "id": "tc07-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -468,7 +468,7 @@
         {
           "id": "tc08-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -531,7 +531,7 @@
         {
           "id": "tc09-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -634,7 +634,7 @@
         {
           "id": "tc10-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -708,7 +708,7 @@
         {
           "id": "tc11-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
@@ -765,7 +765,7 @@
         {
           "id": "tc12-01",
           "command": "open",
-          "target": "/",
+          "target": "/ejercicio3/",
           "targets": [],
           "value": ""
         },
