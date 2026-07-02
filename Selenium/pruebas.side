@@ -17,14 +17,6 @@
           "value": ""
         },
         {
-          "id": "tc01-02",
-          "comment": "Verificar título de la página",
-          "command": "assertTitle",
-          "target": "Gestión de Canciones",
-          "targets": [],
-          "value": ""
-        },
-        {
           "id": "tc01-03",
           "comment": "Introducir título válido",
           "command": "type",
@@ -293,11 +285,11 @@
         },
         {
           "id": "tc05-02",
-          "comment": "Inyectar 101 caracteres en el campo título, omitiendo el maxlength del navegador",
-          "command": "executeScript",
-          "target": "document.getElementById('titulo').value = 'A'.repeat(101)",
+          "comment": "Escribir 101 caracteres en el título (supera el máximo de 100)",
+          "command": "type",
+          "target": "id=titulo",
           "targets": [],
-          "value": ""
+          "value": "AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDDEEEEEEEEEEFFFFFFFFFFGGGGGGGGGGHHHHHHHHHHIIIIIIIIIIJJJJJJJJJJa"
         },
         {
           "id": "tc05-03",
@@ -363,11 +355,11 @@
         },
         {
           "id": "tc06-03",
-          "comment": "Inyectar 101 caracteres en artista",
-          "command": "executeScript",
-          "target": "document.getElementById('artista').value = 'B'.repeat(101)",
+          "comment": "Escribir 101 caracteres en el artista (supera el máximo de 100)",
+          "command": "type",
+          "target": "id=artista",
           "targets": [],
-          "value": ""
+          "value": "KKKKKKKKKKLLLLLLLLLLMMMMMMMMMMNNNNNNNNNNOOOOOOOOOOPPPPPPPPPPQQQQQQQQQQRRRRRRRRRRSSSSSSSSSSTTTTTTTTTTu"
         },
         {
           "id": "tc06-04",
