@@ -1,0 +1,867 @@
+{
+  "id": "a3f1c2d4-e5b6-7890-abcd-ef1234567890",
+  "version": "2.0",
+  "name": "Pruebas Gestión de Canciones - Ejercicio 3",
+  "url": "https://USERNAME.github.io/ejercicio3-examen-ordinario-Maria1075",
+  "tests": [
+    {
+      "id": "tc-01",
+      "name": "TC-01: Añadir canción válida",
+      "commands": [
+        {
+          "id": "tc01-01",
+          "comment": "Abrir la página principal",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc01-02",
+          "comment": "Verificar título de la página",
+          "command": "assertTitle",
+          "target": "Gestión de Canciones",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc01-03",
+          "comment": "Introducir título válido",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Bohemian Rhapsody"
+        },
+        {
+          "id": "tc01-04",
+          "comment": "Introducir artista válido",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Queen"
+        },
+        {
+          "id": "tc01-05",
+          "comment": "Introducir duración válida (354 segundos)",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "354"
+        },
+        {
+          "id": "tc01-06",
+          "comment": "Enviar formulario",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc01-07",
+          "comment": "Verificar que la tabla es visible",
+          "command": "assertElementPresent",
+          "target": "id=cancionesTable",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc01-08",
+          "comment": "Verificar título en la primera fila de la tabla",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(2)",
+          "targets": [],
+          "value": "Bohemian Rhapsody"
+        },
+        {
+          "id": "tc01-09",
+          "comment": "Verificar artista en la primera fila",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(3)",
+          "targets": [],
+          "value": "Queen"
+        },
+        {
+          "id": "tc01-10",
+          "comment": "Verificar duración en la primera fila",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(4)",
+          "targets": [],
+          "value": "354"
+        },
+        {
+          "id": "tc01-11",
+          "comment": "Verificar que el contador de canciones muestra 1",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc01-12",
+          "comment": "Verificar que el formulario se ha limpiado tras el envío",
+          "command": "assertValue",
+          "target": "id=titulo",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "tc-02",
+      "name": "TC-02: Error - Título vacío",
+      "commands": [
+        {
+          "id": "tc02-01",
+          "comment": "Abrir la página (reinicia la sesión en memoria)",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc02-02",
+          "comment": "Dejar el título vacío - solo rellenar artista y duración",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Queen"
+        },
+        {
+          "id": "tc02-03",
+          "comment": "",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "200"
+        },
+        {
+          "id": "tc02-04",
+          "comment": "Intentar enviar el formulario con título vacío",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc02-05",
+          "comment": "Verificar que el campo título tiene clase is-invalid (borde rojo)",
+          "command": "assertCssClass",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc02-06",
+          "comment": "Verificar el mensaje de error del título",
+          "command": "assertText",
+          "target": "id=tituloError",
+          "targets": [],
+          "value": "El título no puede estar vacío."
+        },
+        {
+          "id": "tc02-07",
+          "comment": "Verificar que NO se añadió ninguna canción a la tabla",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-03",
+      "name": "TC-03: Error - Artista vacío",
+      "commands": [
+        {
+          "id": "tc03-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc03-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Stairway to Heaven"
+        },
+        {
+          "id": "tc03-03",
+          "comment": "Dejar artista vacío",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "480"
+        },
+        {
+          "id": "tc03-04",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc03-05",
+          "command": "assertCssClass",
+          "target": "id=artista",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc03-06",
+          "command": "assertText",
+          "target": "id=artistaError",
+          "targets": [],
+          "value": "El artista no puede estar vacío."
+        },
+        {
+          "id": "tc03-07",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-04",
+      "name": "TC-04: Error - Duración vacía",
+      "commands": [
+        {
+          "id": "tc04-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc04-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Hotel California"
+        },
+        {
+          "id": "tc04-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Eagles"
+        },
+        {
+          "id": "tc04-04",
+          "comment": "Dejar duración vacía y enviar",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc04-05",
+          "command": "assertCssClass",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc04-06",
+          "command": "assertText",
+          "target": "id=duracionError",
+          "targets": [],
+          "value": "La duración no puede estar vacía."
+        },
+        {
+          "id": "tc04-07",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-05",
+      "name": "TC-05: Error - Título demasiado largo (> 100 caracteres)",
+      "commands": [
+        {
+          "id": "tc05-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc05-02",
+          "comment": "Inyectar 101 caracteres en el campo título, omitiendo el maxlength del navegador",
+          "command": "executeScript",
+          "target": "document.getElementById('titulo').value = 'A'.repeat(101)",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc05-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Test"
+        },
+        {
+          "id": "tc05-04",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "120"
+        },
+        {
+          "id": "tc05-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc05-06",
+          "command": "assertCssClass",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc05-07",
+          "command": "assertText",
+          "target": "id=tituloError",
+          "targets": [],
+          "value": "El título no puede superar 100 caracteres."
+        },
+        {
+          "id": "tc05-08",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-06",
+      "name": "TC-06: Error - Artista demasiado largo (> 100 caracteres)",
+      "commands": [
+        {
+          "id": "tc06-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc06-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Test"
+        },
+        {
+          "id": "tc06-03",
+          "comment": "Inyectar 101 caracteres en artista",
+          "command": "executeScript",
+          "target": "document.getElementById('artista').value = 'B'.repeat(101)",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc06-04",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "120"
+        },
+        {
+          "id": "tc06-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc06-06",
+          "command": "assertCssClass",
+          "target": "id=artista",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc06-07",
+          "command": "assertText",
+          "target": "id=artistaError",
+          "targets": [],
+          "value": "El artista no puede superar 100 caracteres."
+        },
+        {
+          "id": "tc06-08",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-07",
+      "name": "TC-07: Error - Duración superior al máximo (> 600)",
+      "commands": [
+        {
+          "id": "tc07-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc07-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Muy Larga"
+        },
+        {
+          "id": "tc07-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Test"
+        },
+        {
+          "id": "tc07-04",
+          "comment": "Introducir duración por encima del máximo permitido (601 > 600)",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "601"
+        },
+        {
+          "id": "tc07-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc07-06",
+          "command": "assertCssClass",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc07-07",
+          "command": "assertText",
+          "target": "id=duracionError",
+          "targets": [],
+          "value": "La duración no puede superar 600 segundos."
+        },
+        {
+          "id": "tc07-08",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-08",
+      "name": "TC-08: Error - Duración inferior al mínimo (< 1)",
+      "commands": [
+        {
+          "id": "tc08-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc08-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Cero"
+        },
+        {
+          "id": "tc08-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Test"
+        },
+        {
+          "id": "tc08-04",
+          "comment": "Duración 0 es inválida (mínimo es 1)",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "0"
+        },
+        {
+          "id": "tc08-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc08-06",
+          "command": "assertCssClass",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc08-07",
+          "command": "assertText",
+          "target": "id=duracionError",
+          "targets": [],
+          "value": "La duración debe ser al menos 1 segundo."
+        },
+        {
+          "id": "tc08-08",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "tc-09",
+      "name": "TC-09: Añadir múltiples canciones y verificar tabla",
+      "commands": [
+        {
+          "id": "tc09-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc09-02",
+          "comment": "Añadir primera canción",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Yesterday"
+        },
+        {
+          "id": "tc09-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "The Beatles"
+        },
+        {
+          "id": "tc09-04",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "125"
+        },
+        {
+          "id": "tc09-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc09-06",
+          "comment": "Añadir segunda canción",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Imagine"
+        },
+        {
+          "id": "tc09-07",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "John Lennon"
+        },
+        {
+          "id": "tc09-08",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "187"
+        },
+        {
+          "id": "tc09-09",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc09-10",
+          "comment": "Verificar que el contador muestra 2 canciones",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "2"
+        },
+        {
+          "id": "tc09-11",
+          "comment": "Verificar la primera fila: Yesterday",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:nth-child(1) td:nth-child(2)",
+          "targets": [],
+          "value": "Yesterday"
+        },
+        {
+          "id": "tc09-12",
+          "comment": "Verificar la segunda fila: Imagine",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:nth-child(2) td:nth-child(2)",
+          "targets": [],
+          "value": "Imagine"
+        },
+        {
+          "id": "tc09-13",
+          "comment": "Verificar duración de la segunda fila",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:nth-child(2) td:nth-child(4)",
+          "targets": [],
+          "value": "187"
+        }
+      ]
+    },
+    {
+      "id": "tc-10",
+      "name": "TC-10: Eliminar canción de la lista",
+      "commands": [
+        {
+          "id": "tc10-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc10-02",
+          "comment": "Añadir una canción para poder eliminarla",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción para Eliminar"
+        },
+        {
+          "id": "tc10-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Temporal"
+        },
+        {
+          "id": "tc10-04",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "60"
+        },
+        {
+          "id": "tc10-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc10-06",
+          "comment": "Verificar que se añadió",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc10-07",
+          "comment": "Hacer clic en el botón Eliminar de la primera fila",
+          "command": "click",
+          "target": "id=eliminar-0",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc10-08",
+          "comment": "Verificar que el contador vuelve a 0",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        },
+        {
+          "id": "tc10-09",
+          "comment": "Verificar que el mensaje de lista vacía vuelve a ser visible",
+          "command": "assertElementPresent",
+          "target": "id=emptyMessage",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "tc-11",
+      "name": "TC-11: Valor límite - Duración exactamente 600 (válido)",
+      "commands": [
+        {
+          "id": "tc11-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc11-02",
+          "command": "type",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "Canción Larga"
+        },
+        {
+          "id": "tc11-03",
+          "command": "type",
+          "target": "id=artista",
+          "targets": [],
+          "value": "Artista Límite"
+        },
+        {
+          "id": "tc11-04",
+          "comment": "600 es el valor máximo permitido, debe ser aceptado",
+          "command": "type",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "600"
+        },
+        {
+          "id": "tc11-05",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc11-06",
+          "comment": "Verificar que se añadió correctamente (no hay error de validación)",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "tc11-07",
+          "command": "assertText",
+          "target": "css=#cancionesBody tr:first-child td:nth-child(4)",
+          "targets": [],
+          "value": "600"
+        }
+      ]
+    },
+    {
+      "id": "tc-12",
+      "name": "TC-12: Error - Todos los campos vacíos",
+      "commands": [
+        {
+          "id": "tc12-01",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc12-02",
+          "comment": "Enviar formulario completamente vacío",
+          "command": "click",
+          "target": "id=submitBtn",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "tc12-03",
+          "command": "assertCssClass",
+          "target": "id=titulo",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc12-04",
+          "command": "assertCssClass",
+          "target": "id=artista",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc12-05",
+          "command": "assertCssClass",
+          "target": "id=duracion",
+          "targets": [],
+          "value": "is-invalid"
+        },
+        {
+          "id": "tc12-06",
+          "command": "assertText",
+          "target": "id=tituloError",
+          "targets": [],
+          "value": "El título no puede estar vacío."
+        },
+        {
+          "id": "tc12-07",
+          "command": "assertText",
+          "target": "id=artistaError",
+          "targets": [],
+          "value": "El artista no puede estar vacío."
+        },
+        {
+          "id": "tc12-08",
+          "command": "assertText",
+          "target": "id=duracionError",
+          "targets": [],
+          "value": "La duración no puede estar vacía."
+        },
+        {
+          "id": "tc12-09",
+          "command": "assertText",
+          "target": "id=totalCanciones",
+          "targets": [],
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "suite-principal",
+      "name": "Suite Principal - Gestión de Canciones",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "tc-01",
+        "tc-02",
+        "tc-03",
+        "tc-04",
+        "tc-05",
+        "tc-06",
+        "tc-07",
+        "tc-08",
+        "tc-09",
+        "tc-10",
+        "tc-11",
+        "tc-12"
+      ]
+    }
+  ],
+  "urls": [
+    "https://USERNAME.github.io/ejercicio3-examen-ordinario-Maria1075"
+  ],
+  "plugins": []
+}

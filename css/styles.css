@@ -1,0 +1,52 @@
+/* ── Variables de diseño ── */
+:root {
+    --color-fondo: #f0f2f5;
+}
+
+body {
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+}
+
+/* ── Tarjeta del formulario ── */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.card-header {
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+/* ── Tabla ── */
+#cancionesTable {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table th {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Mensajes de error ── */
+#tituloError,
+#artistaError,
+#duracionError {
+    min-height: 1.2rem;
+    font-size: 0.85rem;
+}
+
+/* ── Badge contador ── */
+#totalCanciones {
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+/* ── Estado vacío ── */
+#emptyMessage {
+    border-style: dashed !important;
+    border-color: #dee2e6 !important;
+}
